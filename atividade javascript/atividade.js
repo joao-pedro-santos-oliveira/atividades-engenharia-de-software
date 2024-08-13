@@ -55,24 +55,4 @@ class Library{
     }
 }
 
-const book1 = new Book("teste livro", "testando livro", "saitama")
-const book2 = new Book("teste livro2", "testando livro2", "saitama")
-const book3 = new Book("teste livro3", "testando livro3", "saitama")
-const book4 = new Book("teste livro4", "testando livro4", "saitama")
-const book5 = new Book("teste livro5", "testando livro5", "saitama")
 
-const library = new Library()
-
-library.addBook(book1)
-library.addBook(book2)
-library.addBook(book3)
-library.addBook(book4)
-library.addBook(book5)
-
-const info = {
-    title: "alou",
-    description: "teste",
-    author: "nao sei"
-}
-
-library.getBooks()
