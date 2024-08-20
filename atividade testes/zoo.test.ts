@@ -7,16 +7,16 @@ describe('Zoo', () => {
     zoo = new Zoo();
   });
 
-  test('should add an animal to the zoo', () => {
-    const animal = new Animal('Leo', 'Lion', 4);
+  test('deve adicionar animal ao zoologico', () => {
+    const animal = new Animal('Leo', 'Leao', 4);
     zoo.addAnimal(animal);
 
     expect(zoo.getAllAnimals()).toContain(animal);
   });
 
-  test('should remove an animal from the zoo by name', () => {
-    const animal1 = new Animal('Leo', 'Lion', 4);
-    const animal2 = new Animal('Bella', 'Elephant', 8);
+  test('deve remover animal do zoologico pelo nome', () => {
+    const animal1 = new Animal('Leo', 'Leao', 4);
+    const animal2 = new Animal('Bella', 'Elefante', 8);
     zoo.addAnimal(animal1);
     zoo.addAnimal(animal2);
 
@@ -26,8 +26,8 @@ describe('Zoo', () => {
     expect(zoo.getAllAnimals()).toContain(animal2);
   });
 
-  test('should return an animal by name', () => {
-    const animal = new Animal('Leo', 'Lion', 4);
+  test('deve pegar animal pelo nome', () => {
+    const animal = new Animal('Leo', 'Leao', 4);
     zoo.addAnimal(animal);
 
     const foundAnimal = zoo.getAnimal('Leo');
@@ -35,15 +35,15 @@ describe('Zoo', () => {
     expect(foundAnimal).toBe(animal);
   });
 
-  test('should return undefined when animal is not found by name', () => {
-    const foundAnimal = zoo.getAnimal('Nonexistent');
+  test('deve retornar undefined caso não encontre o animal pelo nome', () => {
+    const foundAnimal = zoo.getAnimal('Naoexiste');
 
     expect(foundAnimal).toBeUndefined();
   });
 
-  test('should return all animals in the zoo', () => {
-    const animal1 = new Animal('Leo', 'Lion', 4);
-    const animal2 = new Animal('Bella', 'Elephant', 8);
+  test('deve retornar todos os animais do zoologico', () => {
+    const animal1 = new Animal('Leo', 'Leao', 4);
+    const animal2 = new Animal('Bella', 'Elefante', 8);
     zoo.addAnimal(animal1);
     zoo.addAnimal(animal2);
 
@@ -52,22 +52,22 @@ describe('Zoo', () => {
     expect(allAnimals).toEqual([animal1, animal2]);
   });
 
-  test('should return animals by species', () => {
-    const animal1 = new Animal('Leo', 'Lion', 4);
-    const animal2 = new Animal('Bella', 'Elephant', 8);
-    const animal3 = new Animal('Simba', 'Lion', 2);
+  test('deve retornar animais pela especie', () => {
+    const animal1 = new Animal('Leo', 'Leao', 4);
+    const animal2 = new Animal('Bella', 'Elefante', 8);
+    const animal3 = new Animal('Simba', 'Leao', 2);
     zoo.addAnimal(animal1);
     zoo.addAnimal(animal2);
     zoo.addAnimal(animal3);
 
-    const lions = zoo.getAnimalsBySpecies('Lion');
+    const Leaos = zoo.getAnimalsBySpecies('Leao');
 
-    expect(lions).toEqual([animal1, animal3]);
+    expect(Leaos).toEqual([animal1, animal3]);
   });
 
-  test('should return average age of animals', () => {
-    const animal1 = new Animal('Leo', 'Lion', 4);
-    const animal2 = new Animal('Bella', 'Elephant', 8);
+  test('deve retornar a media de idade dos animais', () => {
+    const animal1 = new Animal('Leo', 'Leao', 4);
+    const animal2 = new Animal('Luiz', 'Elefante', 8);
     zoo.addAnimal(animal1);
     zoo.addAnimal(animal2);
 
@@ -76,7 +76,7 @@ describe('Zoo', () => {
     expect(averageAge).toBe(6);
   });
 
-  test('should return 0 as average age when no animals are in the zoo', () => {
+  test('deve retornar 0 como média caso nenhum animal esteja no zoologico', () => {
     const averageAge = zoo.getAverageAge();
 
     expect(averageAge).toBe(0);
